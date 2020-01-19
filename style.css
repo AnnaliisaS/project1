@@ -1,14 +1,15 @@
 
 .translucent-form-overlay {
-    max-width: 960px;
     width: 100%;
     background-color: rgba(54, 54, 54, 0.8);
     padding: 20px;
-    color: #fefefe;
+    color: #fefefe;  
   }
   
   .translucent-form-overlay .columns.row {
     display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
   
   .translucent-form-overlay label {
@@ -31,12 +32,7 @@
   .translucent-form-overlay input::placeholder {
     color: #8a8a8a;
   }
-  
-  .primary.button {
-      padding-left: 5px;
-      padding-right: 5px;
-  }
 
   #advanced-search {
       margin-left: 40px;
-  }
+  } 
