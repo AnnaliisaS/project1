@@ -33,6 +33,9 @@
     color: #8a8a8a;
   }
 
-  #advanced-search {
-      margin-left: 40px;
-  } 
+  img {
+    max-width: 100%;
+    height: auto;
+    -ms-interpolation-mode: bicubic;
+    display: inline-block;
+}
