@@ -4,16 +4,19 @@
   color: blue;
 }
 .translucent-form-overlay {
-    width: 100%;
+    width: 75%;
     background-color: rgba(54, 54, 54, 0.8);
     padding: 20px;
     color: #fefefe;  
+    padding-left: 5%;
+    margin-left: 12.5%;
   }
   
   .translucent-form-overlay .columns.row {
     display: inline-block;
     margin-top: 5px;
     margin-bottom: 5px;
+    
   }
   
   .translucent-form-overlay label {
@@ -101,3 +104,11 @@
   width: 100%;
 }
 
+.menu {
+  align-items: flex-end;
+  padding-bottom: 2%;
+}
+
+.logo {
+  padding-left: 0;
+}
