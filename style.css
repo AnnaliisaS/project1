@@ -1,4 +1,8 @@
-
+.ul {
+  text-align: right;
+  display: inline-block;
+  color: blue;
+}
 .translucent-form-overlay {
     width: 100%;
     background-color: rgba(54, 54, 54, 0.8);
