@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Saved Stories</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+</head>
+
+<style>
+    body {
+        text-align: center;
+    }
+    
+    .your-stories {
+
+    }
+
+    .saved-div {
+        border-right: 2px solid black ;
+        display: inline-block;
+    }
+
+    .hidden-div{
+        border-left: 2px solid black;
+        display: inline-block;
+
+    }
+
+    .saved-stories {
+        width: 200px;
+        height: 50px;
+        background-color: green;
+        border: 2px solid gray;
+        margin: 10px;
+
+    }
+
+    .hidden-stories {
+        width: 200px;
+        height: 50px;
+        background-color: gray;
+        border: 2px solid green;
+        margin: 10px;
+
+        
+    }
+
+
+</style>
+
+<body>
+    
+<div class="your-stories">
+
+    <div class="saved-div">
+        <button class='saved-stories'>
+            Saved Stories        
+        </button>
+    </div>
+
+    <div class="hidden-div">
+        <button class="hidden-stories">        
+            Hidden Stories
+        </button>
+    </div>
+
+</div>
+
+<div class="container">
+
+
+</div>
+<script src="yourstories.js"></script>
+<script>
+
+// when save button in the results is clicked, save isbn 
+// when 
+
+// this should be for the saved stories page
+// var savedStories = JSON.parse(localStorage.getItem("saved-stories"))
+
+
+// if (savedStories == null) {
+//     savedStories = [];
+// }
+
+    // $("#saveButton").on('click', function() {
+    //     var ISBN = $(this).data("ISBN");
+
+
+    // });
+
+// when creating the save button, add data-ISBN field to button
+    
+    
+
+
+
+    var saveISBN = document.querySelectorAll("#save-story");
+    for (var i = 0; i < saveISBN.length; i++) {
+        saveISBN[i].addEventListener('click', function() {
+            var ISBN = $(this).data("ISBN"); // if the isbn number saved as data-ISBN, it will then be set to it
+            savedStories.push(ISBN);
+            localStorage.setItem("saved-stories", JSON.stringify(savedStories));
+
+        })
+
+
+    }
+
+    var hideISBN = document.querySelectorAll("#hide-story");
+    for (var i = 0; i < hideISBN.length; i++) {
+        hideISBN[i].addEventListener('click', function() {
+            var ISBN = $(this).data("ISBN"); // if the isbn number saved as data-ISBN, it will then be set to it
+            hiddenStories.push(ISBN);
+            localStorage.setItem("hidden-stories", JSON.stringify(hiddenStories));
+
+        })
+
+
+    }
+
+
+    // appending the button to the story's div
+
+
+
+
+</script>
+
+
+</body>
+</html>
