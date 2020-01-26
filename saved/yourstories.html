@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Saved Stories</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.1/foundation-flex.css" integrity="sha256-5eVc8i3gJbvbxtgpSU+NZ1KFRXjtCqeJQJpn7CUE5uE=" crossorigin="anonymous"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 
 </head>
 
@@ -46,11 +46,24 @@
 
     .right-div {
         padding: 10px;
+        border: 1px solid gray;
+        border-radius: 0.6rem;
+        margin: 10px;
+        /* width: 10%; */
     }
     
-    /* .left-div {
-        padding: 10px:
-    } */
+    .left-div {
+        display: inline-block;
+        padding: 10px;
+        margin: 10px;
+        width: 200px;
+        
+    } 
+
+    .book-button {
+        margin-right: 10px;
+    }
+    
 
 
 
@@ -61,23 +74,24 @@
 <div class="your-stories">
 
     <div class="saved-div">
-        <button class='saved-stories'>
+        <button class='saved-stories primary button'>
             Saved Stories        
         </button>
     </div>
 
-    <div class="hidden-div">
-        <button class="hidden-stories">        
+    <div class="hidden-div ">
+        <button class="hidden-stories secondary button">        
             Hidden Stories
         </button>
     </div>
 
 </div>
 
-<div class="container" id="saved">
+<div class="container" id="show-info">
 
 
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="yourstories.js"></script>
 <script>
 
