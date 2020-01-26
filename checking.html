@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BookHunter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.1/foundation-flex.css" integrity="sha256-5eVc8i3gJbvbxtgpSU+NZ1KFRXjtCqeJQJpn7CUE5uE=" crossorigin="anonymous"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+  </head>
+<body>
+  <div class="row">
+  <div class="medium-4 columns logo">
+    <img src="./assets/bookhunter5.png" alt="BookHunter Logo">
+  </div>
+  <div class="medium-8 columns menu">
+  <ul class="menu align-right menu-hover-lines">
+    <li><a href="#">Local Bookstores</a></li>
+    <li><a href="#">Saved Stories</a></li>
+    <li><a href="#">Login</a></li>
+  </ul>
+</div>
+</div>
+
+    <div class="translucent-form-overlay">
+      <form>
+        <div class="row small-12 medium-3 columns">
+          <label>Title:
+            <input type="text" name="title" placeholder="Title" id="booktitle">
+          </label>
+        </div>
+        <div class="row small-12 medium-3 columns">
+          <label>Author:
+            <input type="text" name="author" placeholder="Author Last Name" id="bookauthor">
+          </label>
+        </div>
+        <div class="row small-12 medium-3 columns">
+          <label>Keyword:
+            <input type="text" name="keyword" placeholder="Keyword" id="bookkeyword">
+          </label>
+        </div>
+        OR
+        <div class="row small-12 medium-3 columns">
+          <label>Subject:
+            <input type="text" name="subject" placeholder="Pick a Subject" id="booksubject">
+          </label>
+        </div>
+        <div class="row small-12 medium-3 columns">
+          <button type="button" class="primary button expanded search-button" id="searchbtn">
+            Search
+          </button>
+        </div>
+        <div class="row small-12 medium-3 columns">
+          <button type="reset" class="primary button expanded search-button" value="reset" id="clearbtn" >
+            Clear
+          </button>
+        </div>
+       </form>
+      </div>
+
+<div class="results">
+    <hr>
+    <div class="row column">
+      <h4 style="margin: 0;" class="text-center">BOOK RECOMMENDATIONS</h4>
+      <hr>
+    </div>
+    <div id = "bookresults">
+
+    </div>
+    
+    
+</div>
+      
+<script src="searchfields.js"></script>  
+
+</body>
+
+</html>

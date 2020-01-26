@@ -13,7 +13,7 @@ var hiddenStories = JSON.parse(localStorage.getItem("hidden-stories"));
 console.log(savedStories)
 
 if (savedStories == null) {
-    savedStories = [];
+    savedStories = [9781856136129];
 }
 
 if (hiddenStories == null) {

@@ -1,3 +1,4 @@
+searchfieldsinprogress.js
 // SETUP VARIABLES
 // =======================================================
 let title   = "";
@@ -23,6 +24,8 @@ function runQuery(queryURL){
                 console.log(response.docs[i].first_publish_year);
                 console.log(response.docs[i].subject);
 
+    $.ajax{}
+
                 
                 // function bookTemplate(response){
                 // return `
@@ -34,57 +37,18 @@ function runQuery(queryURL){
                 // `
                 // }
                 
-            //     document.getElementById("bookresults").innerHTML = `
-            //     <h1 class "book-title">Books: (${response.length} results></h1>
-            //     ${response.map(bookTemplate).join('')}
-            //     <p class="footer">These ${(response.length)} books are recommended.</p>
-            //     `
-            // }
+                // document.getElementById("bookresults").innerHTML = `
+                // <h1 class "book-title">Books: (${response.length} results></h1>
+                // ${response.map(bookTemplate).join('')}
+                // <p class="footer">These ${(response.length)} books are recommended.</p>
+                // `
+            }
 
-
-            var bookresult = 
-            // `<div class ="book">
-            // <img class="book-cover" src = https://covers.openlibrary.org/b/id/${response.docs[i].cover_i}-M.jpg></img>
-            // <h2 class = "title-and-author">${response.docs[i].title_suggest} by ${response.docs[i].author_name[0]} </h2>
-            // <h3 class = "subjects">${response.docs[i].subject}</h3>
-            // </div>`;
-            `<div class="row bookResult">
-            <div class="cover">
-              <p><img src = "https://covers.openlibrary.org/b/id/${response.docs[i].cover_i}-M.jpg" alt= "book cover image"></img></p>
-            </div>
-            <div class="medium-10 columns">
-              <h5>${response.docs[i].title_suggest} by ${response.docs[i].author_name[0]}</h5>
-              <p>
-                  <span><i class="publishDate"> &#9400 ${response.docs[i].first_publish_year}</i></span>
-              </p>
-              <p>
-                <span><i class="fi-description"> Description: </i></span>
-              </p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus
-                aperiam nesciunt magni facilis ullam.</p>
-              <p>
-                  <span><i class="fi-subject"> Subject Tags: </i></span>
-                  <p><small>${response.docs[i].subject} </small></p>
-                </p>
-                <div class="row small-12 small-3 columns">
-                  <button type="button" class="secondary button search-button" class="preview">
-                    Preview
-                  </button>
-                  <button type="button" class="secondary button search-button" class="amazon">
-                    Amazon
-                  </button>
-                  <button type="button" class="secondary button search-button" class="Library">
-                    Library
-                  </button>
-              </div>
-            </div>
-          </div>
-          <hr>`;
-            $("#bookresults").append(bookresult);
-        }
+        
+   
         // console.log(queryURL);
         // console.log(response);
-    });
+    })
 }
 
 
