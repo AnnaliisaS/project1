@@ -3,7 +3,7 @@
 let title   = "";
 let author  = "";
 let keyword = "";
-let subject = "";
+let subject = ["Biography", "Civilization", "Murder", "Athletes", "Fantasy", "Tanks", "Occultism", "Potatoes","Humor", "Isotopes", "Torts", "Pythons"];
 
 // URL Base for API Call
 let urlBase = "http://openlibrary.org/search.json?";
@@ -16,17 +16,58 @@ function runQuery(queryURL){
 
     //AJAX Function
     $.ajax({url: queryURL, method: "GET"})
-        .done(function(OLData) {
-            for (let i=0; i<OLData.response.docs.length; i++){
-                console.log(OLData.response.docs[i].title_suggest);
-                console.log(OLData.response.docs[i].author_name[0]);
-                console.log(OLData.response.docs[i].first_publish_year);
-                console.log(OLData.response.docs[i].subject);
-            }
-   
-        // console.log(queryURL);
-        // console.log(OLData);
-    })
+        .done(function(response) {
+                console.log(queryURL);
+                console.log(response);
+            for (let i=0; i<response.docs.length; i++){
+                console.log(response.docs[i].title_suggest);
+                console.log(response.docs[i].author_name);
+                console.log(response.docs[i].first_publish_year);
+                console.log(response.docs[i].subject);
+                console.log(response.docs[i].author_name);
+
+    
+
+// APPEND EACH BOOK FROM THE RESPONSE AS NEW HTML ELEMENT
+            var bookresult = 
+            `<div class="row bookResult">
+            <div class="cover">
+              <p><img src = "https://covers.openlibrary.org/b/id/${response.docs[i].cover_i}-M.jpg" alt= "book cover image"></img></p>
+            </div>
+            <div class="medium-10 columns">
+              <h5>${response.docs[i].title_suggest} by ${response.docs[i].author_name[0]}</h5>
+              <p>
+                  <span><class="publishDate"> <b>Published:</b> ${response.docs[i].first_publish_year}</span>
+              </p>
+              <p>
+                <span><class="fi-firstline"> <b>First Line: </b></span>
+              </p>
+              <p>${response.docs[i].first_sentence}</p>
+              <p>
+                  <span><class="fi-subject"> <b>Subject Tags:</b></span>
+                  <p><small>${response.docs[i].subject} </small></p>
+                </p>
+                <div class="row small-12 small-3 columns">
+                  <button type="button" class="secondary button search-button" class="preview">
+                    Preview
+                  </button>
+                  <button type="button" class="secondary button search-button" class="amazon">
+                    Amazon
+                  </button>
+                  <button type="button" class="secondary button search-button" class="Library">
+                    Library
+                  </button>
+                  <button type="small button-group-option" data-grouptype="OR">
+                  <a href="#" class="button success radius">Save</a>
+                  <a href="#" class="button primary radius">Hide</a>
+                  </button>
+              </div>
+            </div>
+          </div>
+          <hr>`;
+            $("#bookresults").append(bookresult);
+        }
+    });
 }
 
 
@@ -59,17 +100,17 @@ $('#searchbtn').on('click', function(){
 
 //     if (searchAuthor !== null){
 //         let queryURL = urlBase + "&a=" + searchAuthor;
-//         console.log(newURL);
+//         console.log(queryURL);
 //     }
 
 //     if (searchKeyword !== null){
 //         let queryURL = urlBase + "&q=" + searchKeyword;
-//         console.log(newURL);
+//         console.log(queryURL);
 //     }
 
 //     if (searchSubject !== null){
 //         let queryURL = urlBase + "&s=" + searchSubject;
-//         console.log(newURL);
+//         console.log(queryURL);
 //     }
 
 // 2. Use those variables to run an AJAX call to Open Library
