@@ -1,13 +1,6 @@
-// SETUP VARIABLES
-// =======================================================
-let title   = "";
-let author  = "";
-let keyword = "";
-let subject = ["Biography", "Civilization", "Murder", "Athletes", "Fantasy", "Tanks", "Occultism", "Potatoes","Humor", "Isotopes", "Torts", "Pythons"];
 
 // URL Base for API Call
-let urlBase = "http://openlibrary.org/search.json?";
-
+let urlBase = "http://openlibrary.org/";
 
 // FUNCTIONS
 // =======================================================
@@ -70,55 +63,24 @@ function runQuery(queryURL){
     });
 }
 
-
 // MAIN PROCESSES (FUNCTION CALLS)
 // =======================================================
 
 $('#searchbtn').on('click', function(){
 
-// // 1. Retrieve user input and convert into variables
+    // // 1. Retrieve user input and convert into variables
+    
+            let searchSubject = $('#booksubject').val().trim();
+            console.log(searchSubject);
+    
+    // //Use user input to build queryURL
+    
+            let queryURL = urlBase + "subjects/" + searchSubject + ".json?details=true";
+            console.log(queryURL);
+    
 
-    let searchTitle = $('#booktitle').val().trim();
-    console.log(searchTitle);
 
-    let searchAuthor = $('#bookauthor').val().trim();
-    console.log(searchAuthor);
 
-    let searchKeyword = $('#bookkeyword').val().trim();
-    console.log(searchKeyword);
- 
-    // let queryURL = '';
 
-    // if (searchTitle) {
-    let queryURL = urlBase + "&title=" + searchTitle;
-    console.log(queryURL);
-
-//     if (searchAuthor){
-//         let queryURL = queryURL + "&a=" + searchAuthor;
-//         console.log(queryURL);
-//     }
-
-//     if (searchKeyword){
-//         let queryURL = queryURL + "&q=" + searchKeyword;
-//         console.log(queryURL);
-//     }
-
-//     if (searchSubject){
-//         let queryURL = queryURL + "&s=" + searchSubject;
-//         console.log(queryURL);
-//     }
-
-// 2. Use those variables to run an AJAX call to Open Library
     runQuery(queryURL)});
 
-
-
-// $("clearbtn").click(function(){
-//   $("bookresults").empty();
-
-
-
-// // 3. Break down the Open Library Object into useable fields
-// // 4. Dynamically generate html content
-
-// // 5. Dealing with edge cases (bugs or situations)
