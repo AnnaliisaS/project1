@@ -62,9 +62,11 @@ function runQuery(queryURL){
                     Amazon
                   </button>
                   </a>
+                  <a href="https://www.google.com/maps/search/?api=1&query=library">
                   <button type="button" class="secondary button search-button" class="Library">
                     Library
                   </button>
+                  </a>
                   <button class="primary button search-button" type="small button-group-option" data-grouptype="OR" data-isbn="${response.docs[i].edition_key[0]}" id="save-story">
                   Save
                   </button>
