@@ -51,7 +51,7 @@ function runQuery(queryURL){
                   <button type="button" class="secondary button search-button" class="preview">
                     Preview
                   </button>
-                  <a href="http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=${response.docs[i].title_suggest}""><button type="button" class="secondary button search-button" class="amazon">
+                  <a href="http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=${response.docs[i].title_suggest}"><button type="button" class="secondary button search-button" class="amazon">
                     Amazon
                   </button>
                   <button type="button" class="secondary button search-button" class="Library">
