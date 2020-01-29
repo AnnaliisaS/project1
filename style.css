@@ -482,3 +482,10 @@
   a {
     color: white;
   }
+
+  .inline {
+    display:inline-block;
+    border-bottom: 1px solid #8a8a8a;
+    padding: 2%;
+    width: 25%;
+  }

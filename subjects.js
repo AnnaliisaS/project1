@@ -21,8 +21,8 @@ function runQuery(queryURL){
 
 // APPEND EACH BOOK FROM THE RESPONSE AS NEW HTML ELEMENT
             var bookresult = 
-            `<hr>
-            <div class="column">
+
+            `<div class="column inline">
             <img class="thumbnail"  src = "https://covers.openlibrary.org/b/id/${response.works[i].cover_id}-M.jpg" alt= "book cover image"></img>
             <h5>${response.works[i].title}</h5>
               <div class="row small-12 small-3 columns">
@@ -31,8 +31,8 @@ function runQuery(queryURL){
                   <a href="#" class="button primary radius">Hide</a>
                   </button>
               </div>
-            </div>
-            <hr>`;
+            </div>`;
+
             $("#bookresults").append(bookresult);
         }
     });
