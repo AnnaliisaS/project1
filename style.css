@@ -1,3 +1,17 @@
+body {
+  background-image: url("./assets/library.png");
+  background-size: cover;
+}
+
+h4 {
+  background-color: white;
+
+}
+
+.results {
+  background-color: white;
+}
+
 /* .translucent-form-overlay css */
 .ul {
   text-align: right;
@@ -483,6 +497,7 @@
     color: white;
   }
 
+/* random subject css */
   .inline {
     display:inline-block;
     border-bottom: 1px solid #8a8a8a;
