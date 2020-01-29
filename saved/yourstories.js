@@ -34,14 +34,14 @@ $(".saved-stories").on("click", function() {
             console.log(json)
 
             var containerDiv = document.getElementById("show-info")
-            var createDiv = document.createElement("div");
+            // var createDiv = document.createElement("div");
             var mainDiv = document.createElement("div");
             var leftDiv = document.createElement("div");
-            var createP = document.createElement("p");
+            // var createP = document.createElement("p");
             var pImg = document.createElement("p");
             var image = document.createElement("img")
             var pTitle = document.createElement("span");
-            var pAuthor = document.createElement("span");
+            var pAuthor = document.createElement("p");
             var rightDiv = document.createElement("div");
             var pDescription1 = document.createElement("span");
             var pDescription2 = document.createElement("p");
@@ -136,14 +136,14 @@ $(".hidden-stories").on("click", function() {
         console.log(json)
 
         var containerDiv = document.getElementById("show-info")
-        var createDiv = document.createElement("div");
+        // var createDiv = document.createElement("div");
         var mainDiv = document.createElement("div");
         var leftDiv = document.createElement("div");
-        var createP = document.createElement("p");
+        // var createP = document.createElement("p");
         var pImg = document.createElement("p");
         var image = document.createElement("img")
         var pTitle = document.createElement("span");
-        var pAuthor = document.createElement("span");
+        var pAuthor = document.createElement("p");
         var rightDiv = document.createElement("div");
         var pDescription1 = document.createElement("span");
         var pDescription2 = document.createElement("p");
@@ -242,14 +242,14 @@ $(".hidden-stories").on("click", function() {
             console.log(json)
 
             var containerDiv = document.getElementById("show-info")
-            var createDiv = document.createElement("div");
+            // var createDiv = document.createElement("div");
             var mainDiv = document.createElement("div");
             var leftDiv = document.createElement("div");
-            var createP = document.createElement("p");
+            // var createP = document.createElement("p");
             var pImg = document.createElement("p");
             var image = document.createElement("img")
             var pTitle = document.createElement("span");
-            var pAuthor = document.createElement("span");
+            var pAuthor = document.createElement("p");
             var rightDiv = document.createElement("div");
             var pDescription1 = document.createElement("span");
             var pDescription2 = document.createElement("p");

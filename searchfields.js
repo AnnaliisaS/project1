@@ -31,6 +31,8 @@ function runQuery(queryURL){
                 console.log(response.docs[i].first_publish_year);
                 console.log(response.docs[i].subject);
                 console.log(response.docs[i].author_name);
+                var usISBNs = response.docs[i].isbn.find(number => number.startsWith("978"))
+                console.log(usISBNs)
 
               
 // APPEND EACH BOOK FROM THE RESPONSE AS NEW HTML ELEMENT
@@ -66,10 +68,10 @@ function runQuery(queryURL){
                     Library
                   </button>
                   </a>
-                  <button class="primary button search-button" type="small button-group-option" data-grouptype="OR" data-isbn="${response.docs[i].edition_key[0]}" id="save-story">
+                  <button class="primary button search-button" type="small button-group-option" data-grouptype="OR" data-isbn="${usISBNs}" id="save-story">
                   Save
                   </button>
-                  <button class="secondary button search-button" type="small button-group-option" data-grouptype="OR" data-isbn="${response.docs[i].edition_key[0]}" id="hide-story">
+                  <button class="secondary button search-button" type="small button-group-option" data-grouptype="OR" data-isbn="${usISBNs}" id="hide-story">
                   Hide
                   </button>
               </div>
