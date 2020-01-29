@@ -1,10 +1,3 @@
-// SETUP VARIABLES
-// =======================================================
-let title   = "";
-let author  = "";
-let keyword = "";
-let subject = ["Biography", "Civilization", "Murder", "Athletes", "Fantasy", "Tanks", "Occultism", "Potatoes","Humor", "Isotopes", "Torts", "Pythons"];
-
 // URL Base for API Call
 let urlBase = "http://openlibrary.org/search.json?";
 
@@ -27,7 +20,7 @@ function runQuery(queryURL){
                 console.log(response.docs[i].author_name);
 
     
-
+              
 // APPEND EACH BOOK FROM THE RESPONSE AS NEW HTML ELEMENT
             var bookresult = 
             `<div class="row bookResult">
@@ -87,34 +80,33 @@ $('#searchbtn').on('click', function(){
     let searchKeyword = $('#bookkeyword').val().trim();
     console.log(searchKeyword);
  
-    // let queryURL = '';
+    let queryURL = urlBase;
 
-    // if (searchTitle) {
-    let queryURL = urlBase + "&title=" + searchTitle;
-    console.log(queryURL);
+    if (searchTitle) {
+        queryURL += "&title=" + searchTitle;
+        console.log(queryURL);
+    }
 
-//     if (searchAuthor){
-//         let queryURL = queryURL + "&a=" + searchAuthor;
-//         console.log(queryURL);
-//     }
+    if (searchAuthor){
+        queryURL += "&author=" + searchAuthor;
+        console.log(queryURL);
+    }
 
-//     if (searchKeyword){
-//         let queryURL = queryURL + "&q=" + searchKeyword;
-//         console.log(queryURL);
-//     }
-
-//     if (searchSubject){
-//         let queryURL = queryURL + "&s=" + searchSubject;
-//         console.log(queryURL);
-//     }
+    if (searchKeyword){
+        queryURL += "&q=" + searchKeyword;
+        console.log(queryURL);
+    }
 
 // 2. Use those variables to run an AJAX call to Open Library
     runQuery(queryURL)});
 
 
 
-// $("clearbtn").click(function(){
-//   $("bookresults").empty();
+$("#clearbtn").click(function(){
+  $("#bookresults").empty()
+  let queryURL = ''
+
+});
 
 
 
