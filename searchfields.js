@@ -68,6 +68,7 @@ function runQuery(queryURL){
 // =======================================================
 
 $('#searchbtn').on('click', function(){
+  $("#bookresults").empty()
 
 // // 1. Retrieve user input and convert into variables
 

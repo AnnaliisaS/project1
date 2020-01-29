@@ -19,8 +19,33 @@ function runQuery(queryURL){
                 console.log(response.docs[i].subject);
                 console.log(response.docs[i].author_name);
 
-    
 
+                if (response.docs[i].subject == undefined) {
+                    pSubjectTags.innerHTML = "<i>Information Not Available</i>";
+                } else {
+                    var subjectLink = document.createElement("a");
+                    var subjects = json[bookInfo[0]].details.subjects;
+                    console.log(subjects);
+                    // // var links = "";
+                    // for (var i = 0; i < subjects.length; i++) {
+                    // // subjects.forEach(function(subs) {
+                    //     var subjectSearch = "https://openlibrary.org/subjects/" + json[bookInfo[0]].details.subjects[i];
+                    //     console.log("https://openlibrary.org/subjects/" + json[bookInfo[0]].details.subjects[0])
+                    //     console.log(subjectSearch);
+                    //     subjectLink.setAttribute("href", subjectSearch);
+                    //     subjectLink.innerHTML = json[bookInfo[0]].details.subjects[i];
+                    //     console.log(subjectLink);
+                    //     pSubjectTags.innerHTML += "<a href=\"" + subjectLink + "\">" + json[bookInfo[0]].details.subjects[i] + "</a>" + ", ";
+                    // }
+                }
+
+
+            // var subjectLinks = "";
+            //     for (var j = 0; j < response.docs[i].subject.length; j++) {
+            //         var subjectLink = response.docs[i].subject[j];
+
+
+            //     } 
 // APPEND EACH BOOK FROM THE RESPONSE AS NEW HTML ELEMENT
             var bookresult = 
             `<div class="row bookResult">
