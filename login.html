@@ -1,52 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./redologin.css" />
-    <title>Book hunter login</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.1/foundation-flex.css" integrity="sha256-5eVc8i3gJbvbxtgpSU+NZ1KFRXjtCqeJQJpn7CUE5uE=" crossorigin="anonymous"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./alogin.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+</head>
+<body>
+    <div class="header">
+        <div class="medium-3 columns logo">
+          <img src="./assets/bookhunter7.png" alt="BookHunter Logo">
+        </div>
+        <div class="medium-8 columns menu">
+          <ul class="menu align-right menu-hover-lines">
+            <li><a href="https://www.google.com/maps/search/?api=1&query=book+shops">Local Bookstores</a></li>
+            <li><a href="saved/yourstories.html">Saved Stories</a></li>
+            <li><a href="#">Home</a></li>
+          </ul>
+        </div>
+      </div>
+    
+        <div class="translucent-form-overlay">
+          <form>
+            <div class="row small-12 medium-3 columns">
+            </div>
+            <div class="row small-12 medium-3 columns">
 
-  </head>
-  <body>
-      <div class="login-box">
-        <img src="./assets/bookhunter2.png" class="avatar">
-        <h1>Sign up</h1>
-        <form>
-            <div class="sign-up">
-                <label for="first-name">First Name</label>
-                <input type="text" name="first-name" id="first-name" placeholder="" />
-              </div>
-              <div class="sign-up">
-                <label for="last-name">Last Name</label>
-                <input type="text" name="last-name" id="last-name" placeholder="" />
-              </div>
-              <div class="sign-up">
-                <label for="email">Email</label>
-                <input type="text" name="email" id="email" placeholder="@mail.com" />
-              </div>
-              <div class="sign-up">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="" />
-              </div>
-              <div id="msg"></div>
-              <button id="sign-up" class="button">Sign Up</button>
-            </form>
-          </div>
-          </div>
-          <div class="hide">
-              <div class="save-user">
-                  <div id="user-first-name"></div>
-                  <div id="user-last-name"></div>
-                  <div id="user-email"></div>
-                  <div id="user-password"></div>
-              </div>
-          </div>
-        </form>
-      
-      
-        
+            </div>
+            <div class="row small-12 medium-3 columns">
 
-    <script src="./script.js"></script>
-  </body>
+            </div>
+            <div class="row small-12 medium-3 columns">
+
+            </div>
+            <div class="row small-12 medium-3 columns">
+
+            </div>
+            <div class="row small-12 medium-3 columns">
+
+            </div>
+           </form>
+          </div>
+
+<div class="login-box">
+    <div class="row collapse expanded">
+      <div class="small-12 medium-6 column small-order-2 medium-order-1">
+        <div class="login-box-form-section">
+          <h1 class="login-box-title">Sign up</h1>
+          <input class="login-box-input" type="text" name="username" placeholder="Username" />
+          <input class="login-box-input" type="email" name="email" placeholder="E-mail" />
+          <input class="login-box-input" type="password" name="password" placeholder="Password" />
+          <input class="login-box-input" type="password" name="password2" placeholder="Retype password" />
+          <input class="login-box-submit-button" type="submit" name="signup_submit" value="Sign me up" />
+        </div>
+        <div class="or">OR</div>
+      </div>
+      <div class="small-12 medium-6 column small-order-1 medium-order-2 login-box-social-section">
+        <div class="login-box-social-section-inner">
+          <span class="login-box-social-headline">Sign in with<br />your social network</span>
+          <a class="login-box-social-button-facebook">Log in with facebook</a>
+          <a class="login-box-social-button-twitter">Log in with Twitter</a>
+          <a class="login-box-social-button-google">Log in with Google+</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
+  
+  
