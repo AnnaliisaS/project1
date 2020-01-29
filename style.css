@@ -10,6 +10,7 @@
     padding: 20px;
     color: #fefefe;  
     padding-left: 15%;
+    min-height: 22.5%;
   }
   
   .translucent-form-overlay .columns.row {
