@@ -47,7 +47,8 @@ function runQuery(queryURL){
                   <a href="http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=${response.docs[i].title_suggest}"><button type="button" class="secondary button search-button" class="amazon">
                     Amazon
                   </button>
-                  <button type="button" class="secondary button search-button" class="Library">
+                  <button type="button" class="secondary button search-button" class="Library"><a href="https://www.google.com/maps/search/?api=1&query=library">
+      
                     Library
                   </button>
                   <button type="small button-group-option" data-grouptype="OR">

@@ -8,99 +8,40 @@
     <title>Saved Stories</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.1/foundation-flex.css" integrity="sha256-5eVc8i3gJbvbxtgpSU+NZ1KFRXjtCqeJQJpn7CUE5uE=" crossorigin="anonymous"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" type="text/css" href="../style.css"> -->
+    <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
-
-<style>
-
-
-    .saved-div {
-        border-right: 2px solid black ;
-        display: inline-block;
-    }
-
-    .hidden-div{
-        border-left: 2px solid black;
-        display: inline-block;
-
-    }
-
-    .saved-stories {
-        width: 200px;
-        height: 50px;
-        background-color: green;
-        border: 2px solid gray;
-        margin: 10px;
-
-    }
-
-    .hidden-stories {
-        width: 200px;
-        height: 50px;
-        background-color: gray;
-        border: 2px solid green;
-        margin: 10px;
-
-        
-    }
-
-    .right-div {
-        padding: 10px;
-        border: 1px solid gray;
-        border-radius: 0.6rem;
-        margin: 10px;
-        /* width: 10%; */
-    }
-    
-    .left-div {
-        display: inline-block;
-        padding: 10px;
-        margin: 10px;
-        width: 200px;
-        
-    } 
-
-    .book-button {
-        margin-right: 10px;
-    }
-    
-    .save-isbn {
-        background: green;
-    }
-
-
-
-</style>
 
 <body>
     <div class="header">
         <div class="medium-3 columns logo">
-          <a href="../index.html"><img src="../assets/bookhunter7.png" alt="BookHunter Logo"></a>
+          <img src="../assets/bookhunter7.png" alt="BookHunter Logo">
         </div>
         <div class="medium-8 columns menu">
           <ul class="menu align-right menu-hover-lines">
-            <li><a href="#">Local Bookstores</a></li>
-            <li><a href="./yourstories.html">Saved Stories</a></li>
-            <li><a href="#">Login</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=book+shops">Local Bookstores</a></li>
+            <li><a href="../login.html">Login</a></li>
+            <li><a href="../index.html">Home</a></li>
           </ul>
         </div>
-    </div>
+      </div>
     
-<div class="your-stories">
-
-    <div class="saved-div">
-        <button class='saved-stories primary button'>
-            Saved Stories        
-        </button>
-    </div>
-
-    <div class="hidden-div ">
-        <button class="hidden-stories secondary button">        
-            Hidden Stories
-        </button>
-    </div>
-
-</div>
+        <div class="translucent-form-overlay">
+          <form>
+            <div class="row small-12 medium-6 columns">
+                <div class="your-stories">
+                    <div class="saved-div">
+                        <button class='saved-stories primary button'>
+                            Saved Stories        
+                        </button>
+                    </div>            
+                <div class="hidden-div ">
+                    <button class="hidden-stories secondary button">        
+                        Hidden Stories
+                    </button>
+                </div>
+            </div>
+           </form>
+          </div>
 
 <div class="container" id="show-info">
 
@@ -129,9 +70,6 @@
 
 // when creating the save button, add data-ISBN field to button
     
-    
-
-
 
     var saveISBN = document.querySelectorAll("#save-story");
     for (var i = 0; i < saveISBN.length; i++) {
