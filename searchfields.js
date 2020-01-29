@@ -32,7 +32,6 @@ function runQuery(queryURL){
                 console.log(response.docs[i].subject);
                 console.log(response.docs[i].author_name);
 
-    
               
 // APPEND EACH BOOK FROM THE RESPONSE AS NEW HTML ELEMENT
             var bookresult = 
@@ -79,8 +78,6 @@ function runQuery(queryURL){
           <hr>`;
             $("#bookresults").append(bookresult);
             
-
-
             // var hideISBN = document.querySelectorAll("#hide-story");
             // for (var j = 0; j < hideISBN.length; j++) {
             //   hideISBN[j].addEventListener('click', function() {
@@ -93,7 +90,6 @@ function runQuery(queryURL){
         }
     });
 }
-
 
 // MAIN PROCESSES (FUNCTION CALLS)
 // =======================================================
@@ -132,8 +128,6 @@ $('#searchbtn').on('click', function(){
 // 2. Use those variables to run an AJAX call to Open Library
     runQuery(queryURL)});
 
-
-
 $("#clearbtn").click(function(){
   $("#bookresults").empty()
   let queryURL = ''
@@ -171,8 +165,6 @@ $("#bookresults").on("click","#save-story",function(){
   localStorage.setItem("saved-stories", JSON.stringify(savedStories));
 
 })
-
-
 
 // // 3. Break down the Open Library Object into useable fields
 // // 4. Dynamically generate html content
