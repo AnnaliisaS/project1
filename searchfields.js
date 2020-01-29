@@ -1,6 +1,19 @@
 // URL Base for API Call
 let urlBase = "http://openlibrary.org/search.json?";
 
+//getting and setting localstorage 
+var savedStories = JSON.parse(localStorage.getItem("saved-stories"));
+var hiddenStories = JSON.parse(localStorage.getItem("hidden-stories"));
+console.log(savedStories)
+
+
+if (savedStories == null) {
+    savedStories = [];
+}
+
+if (hiddenStories == null) {
+    hiddenStories = [];
+}
 
 // FUNCTIONS
 // =======================================================
@@ -44,21 +57,37 @@ function runQuery(queryURL){
                   <button type="button" class="secondary button search-button" class="preview">
                     Preview
                   </button>
-                  <a href="http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=${response.docs[i].title_suggest}"><button type="button" class="secondary button search-button" class="amazon">
+                  <a href="http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=${response.docs[i].title_suggest}">
+                  <button type="button" class="secondary button search-button" class="amazon">
                     Amazon
                   </button>
+                  </a>
                   <button type="button" class="secondary button search-button" class="Library">
                     Library
                   </button>
-                  <button type="small button-group-option" data-grouptype="OR">
-                  <a href="#" class="button success radius">Save</a>
-                  <a href="#" class="button primary radius">Hide</a>
+                  <button class="primary button search-button" type="small button-group-option" data-grouptype="OR" data-isbn="${response.docs[i].edition_key[0]}" id="save-story">
+                  Save
+                  </button>
+                  <button class="secondary button search-button" type="small button-group-option" data-grouptype="OR" data-isbn="${response.docs[i].edition_key[0]}" id="hide-story">
+                  Hide
                   </button>
               </div>
             </div>
           </div>
           <hr>`;
             $("#bookresults").append(bookresult);
+            
+
+
+            // var hideISBN = document.querySelectorAll("#hide-story");
+            // for (var j = 0; j < hideISBN.length; j++) {
+            //   hideISBN[j].addEventListener('click', function() {
+            //     var ISBN = $(this).data("isbn"); // if the isbn number saved as data-ISBN, it will then be set to it
+            //     console.log(ISBN)
+                // hiddenStories.push(ISBN);
+                // localStorage.setItem("hidden-stories", JSON.stringify(hiddenStories));
+
+    // })}
         }
     });
 }
@@ -108,6 +137,38 @@ $("#clearbtn").click(function(){
   let queryURL = ''
 
 });
+
+// $("#save-story").click(function(){
+//   var isbn = $(this).data("isbn");
+//   savedStories.push(isbn);
+//   localStorage.setItem("saved-stories", JSON.stringify(savedStories));
+
+// })
+
+// var hideISBN = document.querySelectorAll("#hide-story");
+// for (var i = 0; i < hideISBN.length; i++) {
+//     hideISBN[i].addEventListener('click', function() {
+
+//         var ISBN = $(this).data("isbn"); // if the isbn number saved as data-ISBN, it will then be set to it
+//         console.log(ISBN)
+//         hiddenStories.push(ISBN);
+//         localStorage.setItem("hidden-stories", JSON.stringify(hiddenStories));
+
+//     })}
+
+$("#bookresults").on("click","#hide-story",function(){
+  hiddenStories.push($(this).data("isbn"));
+  console.log($(this).data("isbn"))
+  localStorage.setItem("hidden-stories", JSON.stringify(hiddenStories));
+
+})
+
+$("#bookresults").on("click","#save-story",function(){
+  savedStories.push($(this).data("isbn"));
+  console.log($(this).data("isbn"))
+  localStorage.setItem("saved-stories", JSON.stringify(savedStories));
+
+})
 
 
 
