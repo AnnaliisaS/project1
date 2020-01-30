@@ -258,9 +258,7 @@ h4 {
   }
   
   .login-box-social-section {
-    background: url("./assets/library.png");
-    background-size: cover;
-    background-position: center;
+    background-color: darkslateblue;
   }
   
   .login-box-input {
