@@ -94,10 +94,10 @@ function runQuery(queryURL){
             $("#bookresults").append(bookresult);
           }
 
-          if (savedStories.includes(usISBNs) == true) {
-            $("#save-story").attr("style", "background-color: green")
-            $("#save-story").html("Saved!")
-          }
+          // if (savedStories.includes(usISBNs) == true) {
+          //   $("#save-story").attr("style", "background-color: green")
+          //   $("#save-story").html("Saved!")
+          // }
             
             // var hideISBN = document.querySelectorAll("#hide-story");
             // for (var j = 0; j < hideISBN.length; j++) {
