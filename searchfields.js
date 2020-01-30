@@ -31,7 +31,7 @@ function runQuery(queryURL){
                 console.log(response.docs[i].first_publish_year);
                 console.log(response.docs[i].subject);
                 console.log(response.docs[i].author_name);
-                var usISBNs = response.docs[i].isbn.find(number => number.startsWith("978"))
+                var usISBNs = response.docs[i].isbn.find(number => number.startsWith("9781"))
                 console.log(usISBNs)
 
               
