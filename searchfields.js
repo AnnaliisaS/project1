@@ -31,8 +31,10 @@ function runQuery(queryURL){
                 console.log(response.docs[i].first_publish_year);
                 console.log(response.docs[i].subject);
                 console.log(response.docs[i].author_name);
-                var usISBNs = response.docs[i].isbn.find(number => number.startsWith("9780")).toString();
+                var usISBNs = response.docs[i].isbn.find(number => number.startsWith("9780"));
                 console.log(usISBNs)
+
+                
 
               
 // APPEND EACH BOOK FROM THE RESPONSE AS NEW HTML ELEMENT
@@ -53,7 +55,7 @@ function runQuery(queryURL){
               <p>${response.docs[i].first_sentence}</p>
               <p>
                   <span><class="fi-subject"> <b>Subject Tags:</b></span>
-                  <p><small>${response.docs[i].subject} </small></p>
+                  <p id="subjects-here"><small>${response.docs[i].subject}</small></p>
                 </p>
                 <div class="row small-12 small-3 columns">
                   <button type="button" class="secondary button search-button" class="preview">
@@ -79,7 +81,6 @@ function runQuery(queryURL){
             </div>
           </div>
           <hr>`;
-          console.log(hiddenStories.includes(usISBNs));
           if (hiddenStories.includes(usISBNs) == true) {
             var hiddenDiv = 
             `<div class="row bookResult">
@@ -91,6 +92,11 @@ function runQuery(queryURL){
             $("#bookresults").append(hiddenDiv);
           } else {
             $("#bookresults").append(bookresult);
+          }
+
+          if (savedStories.includes(usISBNs) == true) {
+            $("#save-story").attr("style", "background-color: green")
+            $("#save-story").html("Saved!")
           }
             
             // var hideISBN = document.querySelectorAll("#hide-story");
@@ -203,7 +209,8 @@ $(".searchfield").on('keypress', function (e) {
 //     })}
 $("#bookresults").on("click","#save-story",function(){
   savedStories.push($(this).data("isbn").toString());
-  console.log($(this).data("isbn"))
+  $(this).html("Saved!")
+  $(this).attr("style", "background-color: green")
   localStorage.setItem("saved-stories", JSON.stringify(savedStories));
 
 })
@@ -213,7 +220,6 @@ $("#bookresults").on("click","#hide-story",function(){
   var hideThisISBN = $(this).data("isbn");
   $(this).html("Hidden")
   hiddenStories.push(hideThisISBN.toString());
-  console.log($(this).data("isbn"))
   localStorage.setItem("hidden-stories", JSON.stringify(hiddenStories));
 
 
