@@ -19,3 +19,6 @@ Technologies Used:
     * JavaScript  
     * APIs: OpenLibrary and Google Maps  
     * Looka logo maker 
+
+![Login Page](/assets/login-page.png)
+Background image courtesy of: https://pixabay.com/photos/library-books-dublin-ireland-2507902/
