@@ -220,6 +220,8 @@ h4 {
     background: #fefefe;
     border-radius: 0;
     overflow: hidden;
+    max-width: 90%;
+    margin-left: 5%;
   }
   
   .login-box .or {
