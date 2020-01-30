@@ -59,7 +59,7 @@ function runQuery(queryURL){
                   <button type="button" class="secondary button search-button" class="preview">
                     Preview
                   </button>
-                  <a href="http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=${response.docs[i].title_suggest}">
+                  <a href="https://www.amazon.com/s?k=${response.docs[i].title_suggest}&i=stripbooks&ref=nb_sb_noss_1">
                   <button type="button" class="secondary button search-button" class="amazon">
                     Amazon
                   </button>
@@ -130,7 +130,7 @@ $('#searchbtn').on('click', function(){
     }
 
 // 2. Use those variables to run an AJAX call to Open Library
-    runQuery(queryURL)});
+  runQuery(queryURL)});
 
 $("#clearbtn").click(function(){
   $("#bookresults").empty()
@@ -202,9 +202,3 @@ $("#bookresults").on("click","#hide-story",function(){
   localStorage.setItem("hidden-stories", JSON.stringify(hiddenStories));
 
 })
-
-
-// // 3. Break down the Open Library Object into useable fields
-// // 4. Dynamically generate html content
-
-// // 5. Dealing with edge cases (bugs or situations)
