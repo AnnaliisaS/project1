@@ -12,7 +12,7 @@ Team Members:
     * Huong Nguyen Thi Xuan  
     * Ryan Tam
 
-Technologies Used:
+Technologies Used:  
     * HTML  
     * CSS  
     * Foundation   
