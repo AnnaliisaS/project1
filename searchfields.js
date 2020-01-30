@@ -31,7 +31,7 @@ function runQuery(queryURL){
                 console.log(response.docs[i].first_publish_year);
                 console.log(response.docs[i].subject);
                 console.log(response.docs[i].author_name);
-                var usISBNs = response.docs[i].isbn.find(number => number.startsWith("9781"))
+                var usISBNs = response.docs[i].isbn.find(number => number.startsWith("9780")).toString();
                 console.log(usISBNs)
 
               
@@ -79,7 +79,19 @@ function runQuery(queryURL){
             </div>
           </div>
           <hr>`;
+          console.log(hiddenStories.includes(usISBNs));
+          if (hiddenStories.includes(usISBNs) == true) {
+            var hiddenDiv = 
+            `<div class="row bookResult">
+              <span> 
+                "${response.docs[i].title_suggest}" was hidden. Go to 'Your Stories' to unhide it.
+              </span>
+              </div>
+              <hr>`
+            $("#bookresults").append(hiddenDiv);
+          } else {
             $("#bookresults").append(bookresult);
+          }
             
             // var hideISBN = document.querySelectorAll("#hide-story");
             // for (var j = 0; j < hideISBN.length; j++) {
@@ -190,15 +202,19 @@ $(".searchfield").on('keypress', function (e) {
 
 //     })}
 $("#bookresults").on("click","#save-story",function(){
-  savedStories.push($(this).data("isbn"));
+  savedStories.push($(this).data("isbn").toString());
   console.log($(this).data("isbn"))
   localStorage.setItem("saved-stories", JSON.stringify(savedStories));
 
 })
 
 $("#bookresults").on("click","#hide-story",function(){
-  hiddenStories.push($(this).data("isbn"));
+  var hideThisISBN = "";
+  var hideThisISBN = $(this).data("isbn");
+  $(this).html("Hidden")
+  hiddenStories.push(hideThisISBN.toString());
   console.log($(this).data("isbn"))
   localStorage.setItem("hidden-stories", JSON.stringify(hiddenStories));
+
 
 })

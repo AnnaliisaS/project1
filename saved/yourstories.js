@@ -69,12 +69,18 @@ $(".saved-stories").on("click", function() {
                 image.setAttribute("src", "https://pngimage.net/wp-content/uploads/2018/06/image-not-found-png-5.png");
             };
             pTitle.innerHTML = "\"<strong>"  + json[bookInfo[0]].details.title + "</strong>\"";
-            pAuthor.innerHTML = "By: " + json[bookInfo[0]].details.authors[0].name;
+            if (json[bookInfo[0]].details.authors == undefined) {
+                pAuthor.innerHTML = "By: " + "<i>Information Not Available</i>";
+            } else {
+                pAuthor.innerHTML = "By: " + json[bookInfo[0]].details.authors[0].name;
+            }
             rightDiv.setAttribute("class", "medium-8 columns right-div alert-callout-border");
             pDescription1.innerHTML = "Description: ";
-            if (json[bookInfo[0]].details.description == undefined) {
+            if (json[bookInfo[0]].details.description.value == undefined) {
                 pDescription2.innerHTML = "<i>Information Not Available</i>";
-            } else {
+            } else if (json[bookInfo[0]].details.description == undefined){
+                pDescription2.innerHTML = "<i>Information Not Available</i>";
+            } else {    
                 pDescription2.innerHTML = json[bookInfo[0]].details.description;
             }
             spanSubjectsTags.innerHTML = "Subject tags: "
@@ -171,12 +177,18 @@ $(".hidden-stories").on("click", function() {
             image.setAttribute("src", "https://pngimage.net/wp-content/uploads/2018/06/image-not-found-png-5.png");
         };
         pTitle.innerHTML = "\"<strong>"  + json[bookInfo[0]].details.title + "</strong>\"";
-        pAuthor.innerHTML = "By: " + json[bookInfo[0]].details.authors[0].name;
+        if (json[bookInfo[0]].details.authors == undefined) {
+            pAuthor.innerHTML = "By: " + "<i>Information Not Available</i>";
+        } else {
+            pAuthor.innerHTML = "By: " + json[bookInfo[0]].details.authors[0].name;
+        }
         rightDiv.setAttribute("class", "medium-8 columns right-div alert-callout-border");
         pDescription1.innerHTML = "Description: ";
-        if (json[bookInfo[0]].details.description == undefined) {
+        if (json[bookInfo[0]].details.description.value == undefined) {
             pDescription2.innerHTML = "<i>Information Not Available</i>";
-        } else {
+        } else if (json[bookInfo[0]].details.description == undefined){
+            pDescription2.innerHTML = "<i>Information Not Available</i>";
+        } else {    
             pDescription2.innerHTML = json[bookInfo[0]].details.description;
         }
         spanSubjectsTags.innerHTML = "Subject tags: "
@@ -283,13 +295,13 @@ $(".hidden-stories").on("click", function() {
             } else {
                 pAuthor.innerHTML = "By: " + json[bookInfo[0]].details.authors[0].name;
             }
-
-
             rightDiv.setAttribute("class", "medium-8 columns right-div alert-callout-border");
             pDescription1.innerHTML = "Description: ";
-            if (json[bookInfo[0]].details.description == undefined) {
+            if (json[bookInfo[0]].details.description == undefined){
+            pDescription2.innerHTML = "<i>Information Not Available</i>";
+            } else if (json[bookInfo[0]].details.description.value == undefined) {
                 pDescription2.innerHTML = "<i>Information Not Available</i>";
-            } else {
+            } else {    
                 pDescription2.innerHTML = json[bookInfo[0]].details.description;
             }
             spanSubjectsTags.innerHTML = "Subject tags: "
