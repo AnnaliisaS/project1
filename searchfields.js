@@ -136,6 +136,40 @@ $("#clearbtn").click(function(){
 
 });
 
+$(".searchfield").on('keypress', function (e) {
+  if (e.key === 'Enter') {
+    $("#bookresults").empty()
+    let searchTitle = $('#booktitle').val().trim();
+    console.log(searchTitle);
+
+    let searchAuthor = $('#bookauthor').val().trim();
+    console.log(searchAuthor);
+
+    let searchKeyword = $('#bookkeyword').val().trim();
+    console.log(searchKeyword);
+ 
+    let queryURL = urlBase;
+
+    if (searchTitle) {
+        queryURL += "&title=" + searchTitle;
+        console.log(queryURL);
+    }
+
+    if (searchAuthor){
+        queryURL += "&author=" + searchAuthor;
+        console.log(queryURL);
+    }
+
+    if (searchKeyword){
+        queryURL += "&q=" + searchKeyword;
+        console.log(queryURL);
+    }
+
+// 2. Use those variables to run an AJAX call to Open Library
+    runQuery(queryURL)
+  }
+})
+
 // $("#save-story").click(function(){
 //   var isbn = $(this).data("isbn");
 //   savedStories.push(isbn);
@@ -153,6 +187,12 @@ $("#clearbtn").click(function(){
 //         localStorage.setItem("hidden-stories", JSON.stringify(hiddenStories));
 
 //     })}
+$("#bookresults").on("click","#save-story",function(){
+  savedStories.push($(this).data("isbn"));
+  console.log($(this).data("isbn"))
+  localStorage.setItem("saved-stories", JSON.stringify(savedStories));
+
+})
 
 $("#bookresults").on("click","#hide-story",function(){
   hiddenStories.push($(this).data("isbn"));
@@ -161,12 +201,6 @@ $("#bookresults").on("click","#hide-story",function(){
 
 })
 
-$("#bookresults").on("click","#save-story",function(){
-  savedStories.push($(this).data("isbn"));
-  console.log($(this).data("isbn"))
-  localStorage.setItem("saved-stories", JSON.stringify(savedStories));
-
-})
 
 // // 3. Break down the Open Library Object into useable fields
 // // 4. Dynamically generate html content
