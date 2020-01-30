@@ -36,7 +36,8 @@ function runQuery(queryURL){
 
               
 // APPEND EACH BOOK FROM THE RESPONSE AS NEW HTML ELEMENT
-            var bookresult = 
+    if (response.docs[i].cover_i){         
+    var bookresult = 
             `<div class="row bookResult">
             <div class="cover">
               <p><img src = "https://covers.openlibrary.org/b/id/${response.docs[i].cover_i}-M.jpg" alt= "book cover image"></img></p>
@@ -90,6 +91,7 @@ function runQuery(queryURL){
 
     // })}
         }
+      }
     });
 }
 

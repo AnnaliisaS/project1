@@ -20,7 +20,9 @@ function runQuery(queryURL){
                 console.log(response.works[i].author_name);
 
 // APPEND EACH BOOK FROM THE RESPONSE AS NEW HTML ELEMENT
-            var bookresult = 
+            
+if (response.works[i].cover_id){
+        var bookresult = 
 
             `<div class="column inline">
             <img class="thumbnail"  src = "https://covers.openlibrary.org/b/id/${response.works[i].cover_id}-M.jpg" alt= "book cover image"></img>
@@ -35,6 +37,7 @@ function runQuery(queryURL){
 
             $("#bookresults").append(bookresult);
         }
+      }
     });
 }
 
