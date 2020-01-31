@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BookHunter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.1/foundation-flex.css" integrity="sha256-5eVc8i3gJbvbxtgpSU+NZ1KFRXjtCqeJQJpn7CUE5uE=" crossorigin="anonymous"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+  </head>
+<body>
+  <div class="header">
+    <div class="medium-3 columns logo">
+      <a href="index.html"><img src="./assets/bookhunter7.png" alt="BookHunter Logo"></a>
+    </div>
+    <div class="medium-8 columns menu">
+      <ul class="menu align-right menu-hover-lines">
+        <li><a href="https://www.google.com/maps/search/?api=1&query=book+shops">Local Bookstores</a></li>
+        <li><a href="./randomsubject.html">Subjects</a></li>
+        <li><a href="saved/yourstories.html">Saved Stories</a></li>
+        <li><a href="./login.html">Login</a></li>
+      </ul>
+    </div>
+  </div>
+
+    <div class="translucent-form-overlay">
+      <form>
+        <div class="row small-12 medium-3 columns">
+          <label>Title:
+            <input type="text" name="title" placeholder="Title" id="booktitle" class="searchfield">
+          </label>
+        </div>
+        <div class="row small-12 medium-3 columns">
+          <label>Author:
+            <input type="text" name="author" placeholder="Author Last Name" id="bookauthor" class="searchfield">
+          </label>
+        </div>
+        <div class="row small-12 medium-3 columns">
+          <label>Keyword:
+            <input type="text" name="keyword" placeholder="Keyword" id="bookkeyword" class="searchfield">
+          </label>
+        </div>
+        <div class="row small-12 medium-3 columns">
+          <button type="button" class="primary button expanded search-button" id="searchbtn">
+            Search
+          </button>
+        </div>
+        <div class="row small-12 medium-3 columns">
+          <button type="reset" class="primary button expanded search-button" value="reset" id="clearbtn" >
+            Clear
+          </button>
+        </div>
+       </form>
+      </div>
+
+  <div class="results">
+    <hr>
+    <div class="row column">
+      <h4 style="margin: 0;" class="text-center">BOOK RECOMMENDATIONS</h4>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="large-12 columns">
+        <article id="bookresults">
+
+        </article>
+      </div>
+    </div>
+  </div>
+<script src="searchfields.js"></script>  
+</body>
+</html>
