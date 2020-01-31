@@ -23,8 +23,10 @@ As a reader, I want to find a book that meets my search criteria, with the optio
     * Foundation   
     * JavaScript  
     * APIs: OpenLibrary and Google Maps  
-    * Looka logo maker 
+    * Looka logo maker  
 
+**GitHub Page:** 
+https://annaliisas.github.io/project1/  
 
 ![Login Page](/assets/login-page.png)
 
