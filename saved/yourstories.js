@@ -36,6 +36,32 @@ $(".hidden-stories").on("click", function() {
 
 })
 
+$("#show-info").on('click',".unsave-isbn",function() {
+    console.log(savedStories)
+    var thisISBN = savedStories.indexOf($(this).data("isbn").toString())
+    console.log($(this).data("isbn").toString())
+    console.log(thisISBN)
+    if (thisISBN > -1) {
+        savedStories.splice(thisISBN, 1);
+    }
+    console.log(savedStories)
+    localStorage.setItem("saved-stories", JSON.stringify(savedStories))
+    
+})
+
+$("#show-info").on('click',".unhide-isbn",function() {
+    console.log(hiddenStories)
+    var thisISBN = hiddenStories.indexOf($(this).data("isbn").toString())
+    console.log($(this).data("isbn").toString())
+    console.log(thisISBN)
+    if (thisISBN > -1) {
+        hiddenStories.splice(thisISBN, 1);
+    }
+    console.log(hiddenStories)
+    localStorage.setItem("hidden-stories", JSON.stringify(hiddenStories))
+    
+})
+
 function loadStories() {
 
     for (var i = 0; i < storyState.length; i++) {
@@ -66,17 +92,17 @@ function loadStories() {
             var buttonPreview = document.createElement("button");
             var buttonAmazon = document.createElement("button");
             var buttonLibrary = document.createElement("button");
-            var buttonSave = document.createElement("button");
-            var buttonHide = document.createElement("button");
+            var buttonUnsave = document.createElement("button");
+            var buttonUnhide = document.createElement("button");
             var bookInfo = Object.keys(json);
 
             mainDiv.setAttribute("class", "row");
             leftDiv.setAttribute("class", "medium-2 columns left-div");
             
             if (json[bookInfo[0]].details.isbn_10 !== undefined) {
-                image.setAttribute("src", "http://covers.openlibrary.org/b/isbn/" + json[bookInfo[0]].details.isbn_10[0] + "-M.jpg");
+                image.setAttribute("src", "https://covers.openlibrary.org/b/isbn/" + json[bookInfo[0]].details.isbn_10[0] + "-M.jpg");
             } else if (json[bookInfo[0]].details.isbn_13 !== undefined) {
-                image.setAttribute("src", "http://covers.openlibrary.org/b/isbn/" + json[bookInfo[0]].details.isbn_13[0] + "-M.jpg");
+                image.setAttribute("src", "https://covers.openlibrary.org/b/isbn/" + json[bookInfo[0]].details.isbn_13[0] + "-M.jpg");
             } else {
                 image.setAttribute("src", "https://pngimage.net/wp-content/uploads/2018/06/image-not-found-png-5.png");
             };
@@ -118,13 +144,15 @@ function loadStories() {
             buttonPreview.setAttribute("class", "secondary button search-button preview book-button")
             buttonAmazon.setAttribute("class", "secondary button search-button amazon book-button")
             buttonLibrary.setAttribute("class", "secondary button search-button library book-button")
-            buttonSave.setAttribute("class", "primary button search-button save-isbn book-button");
-            buttonHide.setAttribute("class", "secondary button search-button hide-isbn book-button");
+            buttonUnsave.setAttribute("class", "primary button search-button unsave-isbn book-button");
+            buttonUnsave.setAttribute("data-isbn", json[bookInfo[0]].bib_key);
+            buttonUnhide.setAttribute("class", "secondary button search-button unhide-isbn book-button");
+            buttonUnhide.setAttribute("data-isbn", json[bookInfo[0]].bib_key);
             buttonPreview.innerHTML = "Preview";
             buttonAmazon.innerHTML = "Amazon";
             buttonLibrary.innerHTML = "Library";
-            buttonSave.innerHTML = "Save"
-            buttonHide.innerHTML = "Hide"
+            buttonUnsave.innerHTML = "Unsave"
+            buttonUnhide.innerHTML = "Unhide"
 
             pImg.appendChild(image);
             leftDiv.appendChild(pImg);
@@ -140,8 +168,11 @@ function loadStories() {
             rightDiv.appendChild(buttonPreview);
             rightDiv.appendChild(buttonAmazon);
             rightDiv.appendChild(buttonLibrary);
-            rightDiv.appendChild(buttonSave);
-            rightDiv.appendChild(buttonHide);
+            if (storyState == savedStories) {
+                rightDiv.appendChild(buttonUnsave);
+            } else {
+                rightDiv.appendChild(buttonUnhide);
+            }
             mainDiv.appendChild(rightDiv);
 
             containerDiv.appendChild(mainDiv);
