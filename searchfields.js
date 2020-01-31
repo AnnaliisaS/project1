@@ -1,5 +1,5 @@
 // URL Base for API Call
-let urlBase = "http://openlibrary.org/search.json?";
+let urlBase = "https://openlibrary.org/search.json?";
 
 //getting and setting localstorage 
 var savedStories = JSON.parse(localStorage.getItem("saved-stories"));
